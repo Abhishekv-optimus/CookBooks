@@ -43,7 +43,7 @@ end
 # mode   "0644"
 #end
 
-template "#{node["smrt_document_root"]}/include/constants.php"
+template "#{node["smrt_document_root"]}/include/constants.php" do
  source "constants.php.erb"
  mode   "0644"
 end
