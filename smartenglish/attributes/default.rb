@@ -1,2 +1,5 @@
 default["smrt_document_root"] = "/srv/www/smrt/current"
 default["db_host_name"] = "sample_db_host"
+default["db_username"] = "smrt_db_usr"
+default["db_password"] = "8T01c52909"
+default["db_name"] = "smrt_production"
