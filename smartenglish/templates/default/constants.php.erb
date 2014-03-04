@@ -44,7 +44,7 @@ else if ( $subDomain == "dev" ) {
     define("UPLOAD_URL", "/content/uploads");
 }
 else {
-	define("DB_SERVER", '"'.<%= node["smrt_db_host_name"]%>.'"');
+	define("DB_SERVER", "<%= node["smrt_db_host_name"]%>");
 	define("DB_USER", "smrt_db_usr");
     define("DB_PASS", "8T01c52909");
     define("DB_NAME", "smrt_production");
