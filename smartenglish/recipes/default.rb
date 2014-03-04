@@ -7,6 +7,10 @@
 # All rights reserved - Do Not Redistribute
 #
 
+execute "Create setup directory" do
+  command "mkdir /opt/setup"
+end
+
 cookbook_file "/opt/setup/mysql_dump.sh" do
   source "mysql_dump.sh"
   mode 0755
@@ -34,16 +38,16 @@ execute "install setup-cloudwatch.sh" do
   command "sh /opt/setup/setup-cloudwatch.sh"
 end
 
-execute "import mysqldump" do
-  command "/usr/bin/mysql -u #{node["smrt_db_username"]} -p #{node["smrt_db_password"]} -h #{node["smrt_db_host_name"]} #{node["smrt_db_name"]} < /opt/setup/db_dump/latest_db.sql"
-end
-
 #cookbook_file "#{node["smrt_document_root"]}/include/constants.php"
 # source "constants.php"
 # mode   "0644"
 #end
 
-#template "/srv/www/smrt/current/include/constants.php" do
-# source "constants.php.erb"
-# mode   "0644"
-#end
+template "/srv/www/smrt/current/include/constants.php" do
+ source "constants.php.erb"
+ mode   "0644"
+end
+
+execute "import mysqldump" do
+  command "/usr/bin/mysql -u #{node["smrt_db_username"]} -p #{node["smrt_db_password"]} -h #{node["smrt_db_host_name"]} #{node["smrt_db_name"]} < /opt/setup/db_dump/latest_db.sql"
+end
