@@ -2,7 +2,7 @@
 # Cookbook Name:: smartenglish
 # Recipe:: default
 #
-# Copyright 2014, YOUR_COMPANY_NAME
+# Copyright 2014, SMRT
 #
 # All rights reserved - Do Not Redistribute
 #
