@@ -35,7 +35,7 @@ execute "install setup-cloudwatch.sh" do
 end
 
 execute "import mysqldump" do
-  command "/usr/bin/mysql -u #{node["db_username"]} -p #{node["db_password"]} -h #{node["db_host_name"]} #{node["db_name"]} < /opt/setup/db_dump/latest_db.sql"
+  command "/usr/bin/mysql -u #{node["smrt_db_username"]} -p #{node["smrt_db_password"]} -h #{node["smrt_db_host_name"]} #{node["smrt_db_name"]} < /opt/setup/db_dump/latest_db.sql"
 end
 
 #cookbook_file "#{node["smrt_document_root"]}/include/constants.php"
