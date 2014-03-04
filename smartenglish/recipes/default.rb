@@ -43,7 +43,7 @@ end
 # mode   "0644"
 #end
 
-template "/srv/www/smrt/current/include/constants.php" do
- source "constants.php.erb"
- mode   "0644"
-end
+#template "/srv/www/smrt/current/include/constants.php" do
+# source "constants.php.erb"
+# mode   "0644"
+#end
