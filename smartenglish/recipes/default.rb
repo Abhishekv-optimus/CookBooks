@@ -48,6 +48,6 @@ template "/srv/www/smrt/current/include/constants.php" do
  mode   "0644"
 end
 
-execute "import mysqldump" do
-  command "/usr/bin/mysql -u #{node["smrt_db_username"]} -p #{node["smrt_db_password"]} -h #{node["smrt_db_host_name"]} #{node["smrt_db_name"]} < /opt/setup/db_dump/latest_db.sql"
-end
+#execute "import mysqldump" do
+#  command "/usr/bin/mysql -u #{node["smrt_db_username"]} -p #{node["smrt_db_password"]} -h #{node["smrt_db_host_name"]} #{node["smrt_db_name"]} < /opt/setup/db_dump/latest_db.sql"
+#end
